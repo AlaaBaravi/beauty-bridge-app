@@ -5,7 +5,8 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#ffffff",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -18,10 +19,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.abdelrahmanezzat22.beautybridge"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+
+    "plugins": ["expo-font", "expo-localization"],
+    "extra": {
+      "supportsRTL": true,
+      "eas": {
+        "projectId": "5025a19e-538e-4bd0-936b-46fd296617b0"
+      }
     }
   }
 }
