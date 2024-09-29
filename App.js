@@ -23,6 +23,12 @@ import CartScreen from "./screens/CartScreen";
 import SendGiftScreen from "./screens/SendGiftScreen";
 import CheckoutFormScreen from "./screens/CheckoutFormScreen";
 import SalonsContextProvider from "./store/context/context";
+import HelpScreen from "./screens/help-screens/HelpScreen";
+import NeedHelpScreen from "./screens/help-screens/NeedHelpScreen";
+import AboutScreen from "./screens/help-screens/AboutScreen";
+import TermsScreen from "./screens/help-screens/TermsScreen";
+import PrivacyPolicyScreen from "./screens/help-screens/PrivacyPolicyScreen";
+import ThankYouScreen from "./screens/help-screens/ThankYouScreen";
 
 const translations = {
   en: { welcome: "Hello" },
@@ -126,6 +132,23 @@ const App = () => {
             />
             <Stack.Screen name="Cart" component={CartScreen} />
             <Stack.Screen name="CheckoutForm" component={CheckoutFormScreen} />
+            <Stack.Screen name="Help" component={HelpScreen} />
+            <Stack.Screen
+              name="NeedHelp"
+              component={NeedHelpScreen}
+              options={{ headerTitle: "Need a help" }}
+            />
+            <Stack.Screen name="About" component={AboutScreen} />
+            <Stack.Screen name="Terms" component={TermsScreen} />
+            <Stack.Screen
+              name="PrivacyPolicy"
+              component={PrivacyPolicyScreen}
+            />
+            <Stack.Screen
+              name="ThankYou"
+              component={ThankYouScreen}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="SendGift"
               component={SendGiftScreen}

@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Dimensions, Pressable } from "react-native";
 import { Avatar } from "@rneui/themed";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import COLORS from "../constants/Colors";
 import NotificationIcon from "../features/home/NotificationIcon";
 import Typography from "../constants/Typography";
+import { useNavigation } from "@react-navigation/native";
 
 const height = Dimensions.get("window").height;
 
@@ -30,6 +31,7 @@ const settings = [
   {
     title: "Help",
     icon: <Ionicons name="help-circle-outline" size={24} color="black" />,
+    to: "Help",
   },
   {
     title: "Log Switch account",
@@ -38,6 +40,8 @@ const settings = [
 ];
 
 export default function ProfileScreen() {
+  const { navigate } = useNavigation();
+
   return (
     <View style={styles.screenContainer}>
       <View style={styles.topBar}>
@@ -62,10 +66,14 @@ export default function ProfileScreen() {
       </View>
       <View style={styles.mainContainer}>
         {settings.map((setting, index) => (
-          <View key={index} style={styles.settingContainer}>
+          <Pressable
+            key={index}
+            style={styles.settingContainer}
+            onPress={() => navigate(setting.to)}
+          >
             {setting.icon}
             <Text>{setting.title}</Text>
-          </View>
+          </Pressable>
         ))}
       </View>
     </View>

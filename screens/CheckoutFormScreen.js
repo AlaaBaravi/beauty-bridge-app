@@ -9,8 +9,8 @@ import Step1 from "../components/checkout-form/Step1";
 import Step2 from "../components/checkout-form/Step2";
 
 const schema = z.object({
-  name: z.string().min(6, "Name must be at least 2 characters").required(),
-  email: z.string().email("Invalid email address").required(),
+  name: z.string().min(6, "Name must be at least 2 characters").required,
+  email: z.string().email("Invalid email address").required,
   date: z.string().date(),
   time: z.string().time(),
 });
